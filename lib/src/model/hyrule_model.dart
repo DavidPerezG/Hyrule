@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
 
 class HyruleModel {
-  String url;
+  int attack;
+  String defense;
+  String description;
+  int id;
+  String image;
+  String name;
 
-  HyruleModel({
-    this.url,
-  });
+  HyruleModel(
+      {this.attack,
+      this.defense,
+      this.description,
+      this.id,
+      this.image,
+      this.name});
 
-  factory HyruleModel.fromJson(Map<String, dynamic> cat) {
+  factory HyruleModel.fromJson(Map<String, dynamic> equipamiento) {
     return HyruleModel(
-      url: cat['url'],
-    );
+        attack: equipamiento['attack'],
+        defense: equipamiento['defense'],
+        description: equipamiento['description'],
+        id: equipamiento['id'],
+        image: equipamiento['image'],
+        name: equipamiento['name']);
   }
 }
