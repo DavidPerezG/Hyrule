@@ -72,6 +72,7 @@ class _Menu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: GetBuilder<HyruleState>(builder: (HyruleState hyruleState) {
+        hyruleState.herramientas.sort((a, b) => a.id.compareTo(b.id));
         return GridView.builder(
           itemCount: hyruleState.herramientas.length,
           gridDelegate:
@@ -174,7 +175,7 @@ class _BackFaceCard extends StatelessWidget {
                   ),
                   Container(
                     child: Text(
-                      _herramienta.defense.toString(),
+                      _herramienta.attack.toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Calamity',
@@ -197,7 +198,7 @@ class _BackFaceCard extends StatelessWidget {
                   ),
                   Container(
                     child: Text(
-                      _herramienta.attack.toString(),
+                      _herramienta.defense.toString(),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: 'Calamity',
